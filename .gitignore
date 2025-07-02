@@ -1,0 +1,11 @@
+# Ignorar ficheros de entorno y secretos
+.env
+token/
+
+# Ignorar carpetas de Python
+__pycache__/
+.venv/
+venv/
+
+# Otros
+*.pyc
