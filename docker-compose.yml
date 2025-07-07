@@ -19,7 +19,7 @@ services:
     build: .
     container_name: etl_consumer
 
-    command: ["python", "consumer.py", "PBI_Bancos"]
+    command: ["python", "consumer.py", "all"]
     restart: always # Se reinicia automáticamente si falla
     environment:
       # Carga toda la configuración desde el fichero .env
