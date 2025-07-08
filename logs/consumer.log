@@ -1,0 +1,76 @@
+2025-07-08 08:43:18,118 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-08 08:43:18,316 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-08 08:43:18,317 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-08 08:43:18,327 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-08 08:43:18,443 [INFO] consumer.py: Waiting for messages...
+2025-07-08 08:44:01,035 [INFO] consumer.py: Message received for: PBI_Bancos
+2025-07-08 08:44:01,460 [INFO] consumer.py: Successfully uploaded parquet file: PBI_Bancos/5741bb8d-b59c-4354-82fe-feb509f52a34.parquet
+2025-07-08 09:45:45,489 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-08 09:45:45,750 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-08 09:45:45,750 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-08 09:45:45,759 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 53358)>; error=111 (Connection refused)
+2025-07-08 09:45:45,760 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:45:45,761 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:45:45,762 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:45:45,762 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:45:45,762 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:45:45,763 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:45:45,766 [WARNING] consumer.py: Connection failed: . Retrying in 10 seconds...
+2025-07-08 09:45:55,910 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 2/5)...
+2025-07-08 09:45:55,917 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-08 09:45:56,051 [INFO] consumer.py: Waiting for messages...
+2025-07-08 09:47:45,301 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-08 09:47:45,577 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-08 09:47:45,578 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-08 09:47:45,583 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 34480)>; error=111 (Connection refused)
+2025-07-08 09:47:45,584 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:47:45,584 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:47:45,585 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:47:45,585 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:45,586 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:45,587 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:47:45,589 [WARNING] consumer.py: Connection failed: . Retrying in 10 seconds...
+2025-07-08 09:47:55,583 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 2/5)...
+2025-07-08 09:47:55,591 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-08 09:47:55,723 [INFO] consumer.py: Waiting for messages...
+2025-07-08 09:48:34,235 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-08 09:48:34,464 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-08 09:48:34,465 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-08 09:48:34,473 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 57834)>; error=111 (Connection refused)
+2025-07-08 09:48:34,474 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:48:34,474 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:48:34,475 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:48:34,476 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:48:34,476 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:48:34,477 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:48:34,479 [WARNING] consumer.py: Connection failed: . Retrying in 10 seconds...
+2025-07-08 09:48:44,480 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 2/5)...
+2025-07-08 09:48:44,493 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-08 09:48:44,632 [INFO] consumer.py: Waiting for messages...
+2025-07-08 09:48:45,179 [INFO] consumer.py: Message received for: PBI_Bancos
+2025-07-08 09:48:45,697 [INFO] consumer.py: Successfully uploaded parquet file: PBI_Bancos/19e7120b-424e-4088-acc2-234d9fba3311.parquet
+2025-07-08 10:14:52,025 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:14:53,340 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:14:54,519 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:14:55,868 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:14:58,480 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:15:01,037 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:15:05,054 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:15:12,565 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:15:26,225 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:15:52,547 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:16:45,158 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:17:46,294 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-08 10:18:47,818 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json

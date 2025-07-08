@@ -2,6 +2,12 @@ import json
 import pika
 import os
 import time
+import logging
+from config import log_config
+
+log_config.setup_logging("logs/main_ingestion")
+logger = logging.getLogger(__name__)
+
 
 def publish_message(exchange_name, routing_key, data, retries=3, delay=2):
     connection = None
@@ -9,7 +15,8 @@ def publish_message(exchange_name, routing_key, data, retries=3, delay=2):
         try:
             amqp_url = os.environ.get('AMQP_URL')
             if not amqp_url:
-                print("Error: AMQP_URL not set.")
+                #print("Error: AMQP_URL not set.")
+                logger.info("Error: AMQP_URL not set.")
                 return False
 
             url_params = pika.URLParameters(amqp_url)
@@ -24,18 +31,23 @@ def publish_message(exchange_name, routing_key, data, retries=3, delay=2):
                 routing_key=routing_key,
                 body=message)
 
-            print(f"Info sent to '{exchange_name}' with routing key '{routing_key}'.")
+            #print(f"Info sent to '{exchange_name}' with routing key '{routing_key}'.")
+            logger.info("Successfully connected")
+            logger.info(f"Info sent to '{exchange_name}' with routing key '{routing_key}'.")
             return True
 
         except pika.exceptions.AMQPConnectionError as e:
-            print(f"[WARN] Connection error (attempt {attempt+1}/{retries}): {e}")
+            #print(f"[WARN] Connection error (attempt {attempt+1}/{retries}): {e}")
+            logger.warning(f"Connection error (attempt {attempt+1}/{retries}): {e}")
             time.sleep(delay)
         except Exception as e:
-            print(f"[ERROR] Unexpected error: {e}")
+            #print(f"[ERROR] Unexpected error: {e}")
+            logger.error(f"Unexpected error: {e}")
             return False
         finally:
             if connection and connection.is_open:
                 connection.close()
-                print("Connection closed.")
+                #print("Connection closed.")
+                logger.info("Connection closed.")
     return False
 

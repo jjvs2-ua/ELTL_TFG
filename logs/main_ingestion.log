@@ -1,0 +1,149 @@
+2025-07-08 08:24:58,982 [ERROR] __main__: Invalid argument: 'PruebaLogs'. Use 'all' or a valid endpoint.
+2025-07-08 08:25:17,278 [ERROR] __main__: Invalid argument: 'PBIBancos'. Use 'all' or a valid endpoint.
+2025-07-08 08:25:55,550 [ERROR] main_ingestion.py: Invalid argument: 'PBIBancos'. Use 'all' or a valid endpoint.
+2025-07-08 08:33:54,442 [ERROR] main_ingestion.py: Invalid argument: 'PBIBancos'. Use 'all' or a valid endpoint.
+2025-07-08 08:34:54,743 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 08:34:55,100 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 08:34:56,171 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 08:42:47,919 [ERROR] main_ingestion.py: Invalid argument: 'PBIBancos'. Use 'all' or a valid endpoint.
+2025-07-08 08:43:59,500 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 08:43:59,941 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 08:43:59,942 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 08:43:59,942 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 08:44:01,034 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
+2025-07-08 08:44:01,036 [INFO] publisher.py: Connection closed.
+2025-07-08 08:44:01,037 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 09:45:50,050 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 09:45:50,378 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 09:45:50,380 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 09:45:50,381 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 09:45:51,352 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 09:45:51,355 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.4', 44648)>; error=111 (Connection refused)
+2025-07-08 09:45:51,357 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:45:51,357 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:45:51,358 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:45:51,359 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:45:51,359 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:45:51,360 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:45:51,362 [WARNING] publisher.py: Connection error (attempt 1/3): 
+2025-07-08 09:45:53,379 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
+2025-07-08 09:45:53,382 [INFO] publisher.py: Connection closed.
+2025-07-08 09:45:53,383 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 09:47:46,731 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 09:47:47,054 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 09:47:47,055 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 09:47:47,056 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 09:47:47,704 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 09:47:47,711 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.4', 34220)>; error=111 (Connection refused)
+2025-07-08 09:47:47,711 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:47:47,712 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:47:47,713 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:47:47,713 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:47,714 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:47,715 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:47:47,718 [WARNING] publisher.py: Connection error (attempt 1/3): 
+2025-07-08 09:47:49,721 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.4', 34234)>; error=111 (Connection refused)
+2025-07-08 09:47:49,722 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:47:49,723 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:47:49,725 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:47:49,725 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:49,727 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:49,728 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:47:49,730 [WARNING] publisher.py: Connection error (attempt 2/3): 
+2025-07-08 09:47:51,733 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.4', 34236)>; error=111 (Connection refused)
+2025-07-08 09:47:51,733 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 09:47:51,734 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 09:47:51,734 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 09:47:51,735 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:51,736 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 09:47:51,736 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 09:47:51,738 [WARNING] publisher.py: Connection error (attempt 3/3): 
+2025-07-08 09:47:53,740 [ERROR] main_ingestion.py: Could not publish message for PBI_Bancos
+2025-07-08 09:47:53,742 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 09:48:44,090 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 09:48:44,552 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 09:48:44,553 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 09:48:44,553 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 09:48:45,160 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 09:48:45,178 [INFO] publisher.py: Successfully connected
+2025-07-08 09:48:45,179 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
+2025-07-08 09:48:45,183 [INFO] publisher.py: Connection closed.
+2025-07-08 09:48:45,185 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 10:18:11,609 [ERROR] main_ingestion.py: PBI_endpoints.json file not found.
+2025-07-08 10:18:40,454 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 10:18:40,943 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 10:18:40,944 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 10:18:40,946 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 10:18:41,715 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 10:18:41,728 [INFO] publisher.py: Successfully connected
+2025-07-08 10:18:41,729 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
+2025-07-08 10:18:41,731 [INFO] publisher.py: Connection closed.
+2025-07-08 10:18:41,732 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 10:19:56,235 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 10:19:56,531 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 10:19:56,532 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 10:19:56,533 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 10:19:57,044 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 10:19:57,046 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 49690)>; error=111 (Connection refused)
+2025-07-08 10:19:57,048 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 10:19:57,049 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 10:19:57,052 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 10:19:57,054 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:19:57,055 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:19:57,056 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 10:19:57,059 [WARNING] publisher.py: Connection error (attempt 1/3): 
+2025-07-08 10:19:59,061 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 35636)>; error=111 (Connection refused)
+2025-07-08 10:19:59,062 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 10:19:59,065 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 10:19:59,066 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 10:19:59,068 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:19:59,070 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:19:59,072 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 10:19:59,073 [WARNING] publisher.py: Connection error (attempt 2/3): 
+2025-07-08 10:20:01,076 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 35638)>; error=111 (Connection refused)
+2025-07-08 10:20:01,077 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-08 10:20:01,078 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-08 10:20:01,080 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-08 10:20:01,082 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:20:01,084 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-08 10:20:01,085 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-08 10:20:01,087 [WARNING] publisher.py: Connection error (attempt 3/3): 
+2025-07-08 10:20:03,090 [ERROR] main_ingestion.py: Could not publish message for PBI_Bancos
+2025-07-08 10:20:03,092 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-08 10:20:14,497 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-08 10:20:14,929 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-08 10:20:14,930 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-08 10:20:14,931 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-08 10:20:15,506 [INFO] api_cliente.py:  Successfully fetched data PBI_Bancos 
+2025-07-08 10:20:15,520 [INFO] publisher.py: Successfully connected
+2025-07-08 10:20:15,521 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
+2025-07-08 10:20:15,525 [INFO] publisher.py: Connection closed.
+2025-07-08 10:20:15,527 [INFO] main_ingestion.py: Finished ingestion pipeline.

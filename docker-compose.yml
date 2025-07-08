@@ -21,14 +21,8 @@ services:
 
     command: ["python", "consumer.py", "all"]
     restart: always # Se reinicia automáticamente si falla
-    environment:
-      # Carga toda la configuración desde el fichero .env
-      - AMQP_URL=${AMQP_URL}
-      - EXCHANGE_NAME=${EXCHANGE_NAME}
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
-      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+    env_file:
+      - ./config/.env
     volumes:
       - ./:/usr/src/app
     depends_on:
@@ -38,12 +32,8 @@ services:
   ingestion_task:
     build: .
     container_name: etl_ingestion_task
-    environment:
-      - AMQP_URL=${AMQP_URL}
-      - EXCHANGE_NAME=${EXCHANGE_NAME}
-      - BC_TENANT_ID=${BC_TENANT_ID}
-      - BC_CLIENT_ID=${BC_CLIENT_ID}
-      - BC_CLIENT_SECRET=${BC_CLIENT_SECRET}
+    env_file:
+      - ./config/.env
     volumes:
       - ./:/usr/src/app
     depends_on:

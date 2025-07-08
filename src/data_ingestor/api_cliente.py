@@ -1,6 +1,11 @@
 from urllib.error import HTTPError
 import requests
-import json
+import logging
+from config import log_config
+
+log_config.setup_logging("logs/main_ingestion")
+logger = logging.getLogger(__name__)
+
 
 class ApiClient:
 
@@ -14,7 +19,8 @@ class ApiClient:
         try:
             URL = self.base_url + endpoint
             token = self.token
-            print(f'\n Endpoint: \n {endpoint} \n')
+            #print(f'\n Endpoint: \n {endpoint} \n')
+            logger.info(f' Endpoint:  {endpoint} ')
             Auth_token = f'Bearer {token}'
             headers = {
                 'Authorization': Auth_token,
@@ -23,14 +29,17 @@ class ApiClient:
             response = requests.get(URL, headers=headers)
             response.raise_for_status()
             data = response.json()['value']
+            logger.info(f' Successfully fetched data {endpoint} ')
             return data
 
         except HTTPError as http_err:
-            print(f"Error HTTP ocurrido: {http_err}")
-            print(f"Respuesta del servidor: {response.text}")
+            #print(f"Error HTTP ocurrido: {http_err}")
+            logger.error(f'HTTP error occurred: {http_err}')
+            #print(f"Respuesta del servidor: {response.text}")
             return None
         except Exception as err:
-            print(f"Otro error ocurrido: {err}")
+            #print(f"Otro error ocurrido: {err}")
+            logger.error(f'Other error occurred: {err}')
             return None
 
 

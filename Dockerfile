@@ -20,4 +20,4 @@ COPY . .
 
 # 6. (Opcional) Define el comando por defecto que se ejecutará si no se especifica otro.
 #    En tu caso, docker-compose.yml sobrescribe este comando para cada servicio.
-CMD ["python", "consumer.py", "PBI_Bancos"]
+CMD ["python", "consumer.py", "all"]
