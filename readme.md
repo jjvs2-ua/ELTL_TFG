@@ -128,7 +128,7 @@ Sigue estos pasos para poner en marcha el pipeline en tu entorno local.
 3. **Construye y levanta los servicios:**
 
     ```bash
-    docker-compose up -d --build
+    docker-compose up -d --build rabbitmq consumer
     ```
 
     El consumidor (`consumer`) se quedará esperando mensajes.
