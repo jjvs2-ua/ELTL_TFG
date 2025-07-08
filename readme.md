@@ -39,7 +39,7 @@ El flujo de trabajo se divide en tres componentes principales orquestados por Do
 graph TD
     A[👨‍💻 Usuario ejecuta Ingestion Task] --> B(main_ingestion.py)
     B --> C{API Business Central}
-    B --> D[Publica en RabbitMQ]
+      --> D[Publica en RabbitMQ]
     subgraph "Docker Compose"
         D -- Mensaje JSON --> E(RabbitMQ Exchange)
         E -- Routing Key --> F[Cola de Endpoint]
