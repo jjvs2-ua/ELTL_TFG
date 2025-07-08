@@ -1,5 +1,5 @@
 # Ignorar ficheros de entorno y secretos
-.env
+config/.env
 token/
 
 # Ignorar carpetas de Python
