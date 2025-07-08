@@ -1,0 +1,6 @@
+guia de despliegue:
+docker-compose up -d rabbitmq consumer
+docker-compose run --rm ingestion_task python main_ingestion.py
+
+paralelizando: 56seg
+sin paralelizar: 2 min 56 seg
