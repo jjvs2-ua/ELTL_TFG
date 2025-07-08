@@ -4,55 +4,52 @@ Este proyecto implementa un pipeline de **ETL (Extract, Transform, Load)** robus
 
 Todo el proceso está orquestado con **Docker Compose** y utiliza un bróker de mensajes **RabbitMQ** para desacoplar los servicios y garantizar la fiabilidad en la entrega de datos.
 
+---
+
 ## ✨ Características Principales
 
-  * **Extracción de Datos Dinámica**: Ingiere datos de múltiples *endpoints* de la API de Business Central, especificados mediante argumentos de línea de comandos.
-  * **Autenticación Segura**: Utiliza OAuth 2.0 (Client Credentials) para autenticarse de forma segura con la API.
-  * **Procesamiento Asíncrono**: Emplea **RabbitMQ** como cola de mensajes para gestionar la ingesta de datos de forma asíncrona, mejorando la escalabilidad y la resiliencia.
-  * **Transformación Eficiente**: Convierte los datos de formato JSON a **Apache Parquet**, optimizando el almacenamiento y la velocidad de las consultas analíticas.
-  * **Carga en la Nube**: Almacena los archivos Parquet procesados en un bucket de **AWS S3**.
-  * **Contenerización**: Todo el entorno (aplicación y servicios) está completamente contenerizado con **Docker**, garantizando la portabilidad y la facilidad de despliegue.
-  * **Logging Centralizado**: Configuración de logging centralizada que guarda los registros en ficheros y silencia el ruido de las librerías de terceros para una depuración más limpia.
-  * **Configuración Flexible**: Gestiona toda la configuración sensible y de entorno a través de un fichero `.env`.
+- **Extracción de Datos Dinámica**: Ingiere datos de múltiples *endpoints* de la API de Business Central, especificados mediante argumentos de línea de comandos.
+- **Autenticación Segura**: Utiliza OAuth 2.0 (Client Credentials) para autenticarse de forma segura con la API.
+- **Procesamiento Asíncrono**: Emplea **RabbitMQ** como cola de mensajes para gestionar la ingesta de datos de forma asíncrona, mejorando la escalabilidad y la resiliencia.
+- **Transformación Eficiente**: Convierte los datos de formato JSON a **Apache Parquet**, optimizando el almacenamiento y la velocidad de las consultas analíticas.
+- **Carga en la Nube**: Almacena los archivos Parquet procesados en un bucket de **AWS S3**.
+- **Contenerización**: Todo el entorno (aplicación y servicios) está completamente contenerizado con **Docker**, garantizando la portabilidad y la facilidad de despliegue.
+- **Logging Centralizado**: Configuración de logging centralizada que guarda los registros en ficheros y silencia el ruido de las librerías de terceros para una depuración más limpia.
+- **Configuración Flexible**: Gestiona toda la configuración sensible y de entorno a través de un fichero `.env`.
 
------
+---
 
 ## 🏗️ Arquitectura del Pipeline
 
 El flujo de trabajo se divide en tres componentes principales orquestados por Docker Compose:
 
-1.  **Productor (`ingestion_task`)**: Un script de Python (`main_ingestion.py`) que se ejecuta como una tarea. Se encarga de:
+1. **Productor (`ingestion_task`)**: Un script de Python (`main_ingestion.py`) que se ejecuta como una tarea. Se encarga de:
+   - Obtener un token de autenticación.
+   - Realizar peticiones a la API de Business Central para uno o varios *endpoints*.
+   - Publicar los datos obtenidos (en formato JSON) en un *exchange* de RabbitMQ.
 
-      * Obtener un token de autenticación.
-      * Realizar peticiones a la API de Business Central para uno o varios *endpoints*.
-      * Publicar los datos obtenidos (en formato JSON) en un *exchange* de RabbitMQ.
+2. **Bróker de Mensajes (`rabbitmq`)**: Una instancia de RabbitMQ que actúa como intermediario. Recibe los mensajes del productor y los enruta a las colas correspondientes, desacoplando la ingesta de la carga.
 
-2.  **Bróker de Mensajes (`rabbitmq`)**: Una instancia de RabbitMQ que actúa como intermediario. Recibe los mensajes del productor y los enruta a las colas correspondientes, desacoplando la ingesta de la carga.
-
-3.  **Consumidor (`consumer`)**: Un servicio de Python (`consumer.py`) que corre de forma continua. Se encarga de:
-
-      * Escuchar los mensajes de las colas de RabbitMQ.
-      * Procesar cada mensaje, convirtiendo los datos JSON a formato Parquet.
-      * Subir el fichero `.parquet` resultante al bucket de S3.
-
-<!-- end list -->
+3. **Consumidor (`consumer`)**: Un servicio de Python (`consumer.py`) que corre de forma continua. Se encarga de:
+   - Escuchar los mensajes de las colas de RabbitMQ.
+   - Procesar cada mensaje, convirtiendo los datos JSON a formato Parquet.
+   - Subir el fichero `.parquet` resultante al bucket de S3.
 
 ```mermaid
 graph TD
-    A[👨‍💻 Usuario ejecuta Ingestion Task] --> B(main_ingestion.py);
-    B --> C{API Business Central};
-    B --> D[Publica en RabbitMQ];
+    A[👨‍💻 Usuario ejecuta Ingestion Task] --> B(main_ingestion.py)
+    B --> C{API Business Central}
+    B --> D[Publica en RabbitMQ]
     subgraph "Docker Compose"
-        D -- Mensaje JSON --> E(RabbitMQ Exchange);
-        E -- Routing Key --> F[Cola de Endpoint];
-        G(consumer.py) -- Escucha --> F;
+        D -- Mensaje JSON --> E(RabbitMQ Exchange)
+        E -- Routing Key --> F[Cola de Endpoint]
+        G(consumer.py) -- Escucha --> F
     end
-    G --> H(Transforma a Parquet);
-    H --> I[☁️ Sube a AWS S3];
-
+    G --> H(Transforma a Parquet)
+    H --> I[☁️ Sube a AWS S3]
 ```
 
------
+---
 
 ## 📁 Estructura del Proyecto
 
@@ -86,31 +83,30 @@ graph TD
 └── requirements.txt            # Dependencias de Python del proyecto.
 ```
 
------
+---
 
 ## 🚀 Cómo Empezar
 
 Sigue estos pasos para poner en marcha el pipeline en tu entorno local.
 
-### **Requisitos Previos**
+### 🔧 Requisitos Previos
 
-  * [Docker](https://www.docker.com/get-started)
-  * [Docker Compose](https://docs.docker.com/compose/install/) (generalmente incluido con Docker Desktop).
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-### **Pasos de Instalación**
+### 🛠️ Pasos de Instalación
 
-1.  **Clona el repositorio:**
+1. **Clona el repositorio:**
 
     ```bash
     git clone <URL_DEL_REPOSITORIO>
     cd <NOMBRE_DEL_PROYECTO>
     ```
 
-2.  **Crea el fichero de entorno:**
-    Crea un fichero llamado `.env` dentro de la carpeta `config/`. Puedes usar el siguiente template:
+2. **Crea el fichero de entorno `.env`:**
 
     ```ini
-    # config/.env
+    # .env
 
     # Credenciales de la App de Microsoft Entra ID (Azure)
     BC_CLIENT_ID="TU_CLIENT_ID"
@@ -129,8 +125,7 @@ Sigue estos pasos para poner en marcha el pipeline en tu entorno local.
     AWS_DEFAULT_REGION="tu-region-de-aws" # ej: eu-west-1
     ```
 
-3.  **Construye y levanta los servicios:**
-    Este comando construirá las imágenes de Docker y pondrá en marcha los contenedores de RabbitMQ y el consumidor.
+3. **Construye y levanta los servicios:**
 
     ```bash
     docker-compose up -d --build
@@ -138,13 +133,13 @@ Sigue estos pasos para poner en marcha el pipeline en tu entorno local.
 
     El consumidor (`consumer`) se quedará esperando mensajes.
 
------
+---
 
-## 🛠️ Cómo Usar
+## ▶️ Cómo Usar
 
 Para iniciar la ingesta de datos, ejecuta el servicio `ingestion_task` definido en `docker-compose.yml`.
 
-  * **Para ingerir datos de TODOS los *endpoints*** definidos en `PBI_endpoints.json`:
+- **Para ingerir datos de TODOS los *endpoints* definidos en `PBI_endpoints.json`:**
 
     ```bash
     docker-compose run --rm ingestion_task all
@@ -156,13 +151,13 @@ Para iniciar la ingesta de datos, ejecuta el servicio `ingestion_task` definido 
     docker-compose run --rm ingestion_task
     ```
 
-  * **Para ingerir datos de un ÚNICO *endpoint***:
+- **Para ingerir datos de un ÚNICO *endpoint*:**
 
     ```bash
     docker-compose run --rm ingestion_task PBI_Bancos
     ```
 
-    *(Reemplaza `PBI_Bancos` por el endpoint que desees procesar)*.
+    *(Reemplaza `PBI_Bancos` por el endpoint que desees procesar).*
 
 Puedes monitorizar los logs de los servicios con:
 
@@ -174,15 +169,15 @@ docker-compose logs -f consumer
 docker-compose logs -f ingestion_task
 ```
 
------
+---
 
-## ⚙️ Dependencias
+## 📦 Dependencias
 
 Las principales librerías de Python utilizadas en este proyecto son:
 
-  * **`pika`**: Cliente de Python para RabbitMQ.
-  * **`boto3`**: SDK de AWS para Python, utilizado para interactuar con S3.
-  * **`pandas`**: Para la manipulación y estructuración de datos.
-  * **`pyarrow`**: Motor para la escritura de ficheros en formato Parquet.
-  * **`requests`**: Para realizar peticiones HTTP a la API.
-  * **`python-dotenv`**: Para cargar variables de entorno desde el fichero `.env`.
+- `pika`: Cliente de Python para RabbitMQ.
+- `boto3`: SDK de AWS para Python, utilizado para interactuar con S3.
+- `pandas`: Para la manipulación y estructuración de datos.
+- `pyarrow`: Motor para la escritura de ficheros en formato Parquet.
+- `requests`: Para realizar peticiones HTTP a la API.
+- `python-dotenv`: Para cargar variables de entorno desde el fichero `.env`.
