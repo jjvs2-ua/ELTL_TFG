@@ -58,6 +58,7 @@ graph TD
 ├── config/
 │   ├── PBI_endpoints.json      # Lista de endpoints de la API a consultar.
 │   └── log_config.py           # Módulo de configuración centralizada de logging.
+|   └── .env                    # Fichero de variables de entorno (debe ser creado localmente).            
 │
 ├── consumer/
 │   └── consumer.py             # Lógica del consumidor: recibe de RabbitMQ, transforma y carga a S3.
@@ -77,7 +78,6 @@ graph TD
 ├── token/
 │   └── token.json              # Almacena el token de acceso más reciente (ignorado por Git).
 │
-├── .env                        # Fichero de variables de entorno (debe ser creado localmente).
 ├── docker-compose.yml          # Define y orquesta los servicios de la aplicación.
 ├── main_ingestion.py           # Punto de entrada para la tarea de ingesta (productor).
 └── requirements.txt            # Dependencias de Python del proyecto.
