@@ -1,6 +1,6 @@
 # Ignorar ficheros de entorno y secretos
 config/.env
-token/
+token/token.json
 
 # Ignorar carpetas de Python
 __pycache__/
