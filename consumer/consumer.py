@@ -9,6 +9,9 @@ import sys
 from dotenv import load_dotenv
 import os
 import logging
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 from config import log_config
 
 # Configura el logging al inicio del script
@@ -130,7 +133,9 @@ class S3Consumer:
 if __name__ == '__main__':
     try:
         project_root = os.path.dirname(os.path.abspath(__file__))
-        endpoints_json_path = os.path.join(project_root, 'PBI_endpoints.json')
+        endpoints_json_path = os.path.join(project_root, '..', 'config', 'PBI_endpoints.json')
+        endpoints_json_path = os.path.abspath(endpoints_json_path)
+
         with open(endpoints_json_path, 'r') as f:
             ALL_ENDPOINTS = json.load(f)
     except FileNotFoundError:

@@ -142,19 +142,19 @@ Para iniciar la ingesta de datos, ejecuta el servicio `ingestion_task` definido 
 - **Para ingerir datos de TODOS los *endpoints* definidos en `PBI_endpoints.json`:**
 
     ```bash
-    docker-compose run --rm ingestion_task all
+    docker-compose run --rm ingestion_task python main_ingestion.py all
     ```
 
     *O simplemente:*
 
     ```bash
-    docker-compose run --rm ingestion_task
+    docker-compose run --rm ingestion_task python main_ingestion.py
     ```
 
 - **Para ingerir datos de un ÚNICO *endpoint*:**
 
     ```bash
-    docker-compose run --rm ingestion_task PBI_Bancos
+    docker-compose run --rm ingestion_task python main_ingestion.py PBI_Bancos
     ```
 
     *(Reemplaza `PBI_Bancos` por el endpoint que desees procesar).*
