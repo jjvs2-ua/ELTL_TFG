@@ -7,9 +7,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 from config import log_config
 
-log_config.setup_logging("logs/main_ingestion")
-logger = logging.getLogger(__name__)
-
 project_root = os.path.dirname(os.path.abspath(__file__))
 src_path = os.path.join(project_root, 'src')
 if src_path not in sys.path:
@@ -18,6 +15,12 @@ if src_path not in sys.path:
 from auth.token_manager import get_new_token
 from data_ingestor.api_cliente import ApiClient
 from messaging.publisher import publish_message
+
+
+log_config.setup_logging("logs/main_ingestion")
+logger = logging.getLogger(__name__)
+
+
 
 def process_endpoint(endpoint, api_client, exchange_name):
     try:
@@ -77,18 +80,6 @@ def main():
 
     api_client = ApiClient(base_url=BASE_URL, token=token)
 
-    # for endpoint in endpoints_to_process:
-    #     print(f"--- Processing endpoint: {endpoint} ---")
-    #
-    #     data = api_client.get_all_data(endpoint)
-    #
-    #     if data:
-    #         routing_key = f"{endpoint}.info"
-    #         success = publish_message(EXCHANGE_NAME, routing_key, data)
-    #         if not success:
-    #             print(f"[ERROR] Could not publish message for {endpoint}")
-    #     else:
-    #         print(f"[WARN] No data received for {endpoint}. Skipping publication.")
     with ThreadPoolExecutor(max_workers=len(endpoints_to_process)) as executor:
         futures = [
             executor.submit(process_endpoint, endpoint, api_client, EXCHANGE_NAME)

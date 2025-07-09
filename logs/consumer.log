@@ -74,3 +74,50 @@ pika.exceptions.AMQPConnectionError
 2025-07-08 10:16:45,158 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
 2025-07-08 10:17:46,294 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
 2025-07-08 10:18:47,818 [ERROR] consumer.py: file not found  /usr/src/app/PBI_endpoints.json
+2025-07-09 07:47:13,248 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:14,386 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:15,461 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:16,809 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:18,608 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:23,754 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:27,721 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:34,936 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:47:48,532 [ERROR] consumer.py: file not found  /usr/src/app/consumer/config/PBI_endpoints.json
+2025-07-09 07:49:10,067 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-09 07:49:10,419 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-09 07:49:10,419 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-09 07:49:10,426 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 38012)>; error=111 (Connection refused)
+2025-07-09 07:49:10,427 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-09 07:49:10,427 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-09 07:49:10,427 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-09 07:49:10,428 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-09 07:49:10,428 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-09 07:49:10,428 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-09 07:49:10,430 [WARNING] consumer.py: Connection failed: . Retrying in 10 seconds...
+2025-07-09 07:49:20,431 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 2/5)...
+2025-07-09 07:49:20,442 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-09 07:49:20,568 [INFO] consumer.py: Waiting for messages...
+2025-07-09 07:50:12,620 [INFO] credentials.py: Found credentials in environment variables.
+2025-07-09 07:50:12,783 [INFO] consumer.py: Starting : PBI_Bancos, PBI_CabAboCompra, PBI_CabAboVenta, PBI_CabFraCompra, PBI_CabFraVenta, PBI_CarteraDoc, PBI_Clientes, PBI_ConfRegGen, PBI_Cuentas, PBI_LinAboCompra, PBI_LinAboVenta, PBI_LinFraCompra, PBI_LinFraVenta, PBI_MovContabilidad, PBI_MovProvDetallado, PBI_MovProveedor, PBI_PresupuestoContabilidad, PBI_Proveedores, PBI_PurchaseHeader, PBI_PurchLine, PBI_SalesHeader, PBI_SalesLine, PBI_SourceCodeSetup
+2025-07-09 07:50:12,783 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 1/5)...
+2025-07-09 07:50:12,789 [ERROR] io_services_utils.py: Socket failed to connect: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.19.0.3', 48766)>; error=111 (Connection refused)
+2025-07-09 07:50:12,790 [ERROR] connection_workflow.py: TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.19.0.2', 5672))
+2025-07-09 07:50:12,790 [ERROR] connection_workflow.py: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-07-09 07:50:12,791 [ERROR] connection_workflow.py: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-07-09 07:50:12,792 [ERROR] connection_workflow.py: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-09 07:50:12,792 [ERROR] blocking_connection.py: Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-07-09 07:50:12,793 [ERROR] blocking_connection.py: Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-07-09 07:50:12,794 [WARNING] consumer.py: Connection failed: . Retrying in 10 seconds...
+2025-07-09 07:50:22,795 [INFO] consumer.py: Attempting to connect to RabbitMQ (Attempt 2/5)...
+2025-07-09 07:50:22,805 [INFO] consumer.py: Successfully connected to RabbitMQ
+2025-07-09 07:50:22,921 [INFO] consumer.py: Waiting for messages...
+2025-07-09 07:52:26,028 [INFO] consumer.py: Message received for: PBI_Bancos
+2025-07-09 07:52:26,569 [INFO] consumer.py: Successfully uploaded parquet file: PBI_Bancos/121fa853-c815-49f4-aa40-41919634b7dc.parquet
