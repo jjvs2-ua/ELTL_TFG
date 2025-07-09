@@ -199,3 +199,63 @@ pika.exceptions.AMQPConnectionError
 2025-07-09 07:52:26,024 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_Bancos.info'.
 2025-07-09 07:52:26,026 [INFO] publisher.py: Connection closed.
 2025-07-09 07:52:26,028 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:19:54,801 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:19:55,237 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:19:55,238 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-09 11:19:55,239 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-09 11:19:56,214 [ERROR] api_cliente.py: Other error occurred: module 'datetime' has no attribute 'now'
+2025-07-09 11:19:56,215 [WARNING] main_ingestion.py: No data found for PBI_Bancos
+2025-07-09 11:19:56,217 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:26:18,892 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:26:19,311 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:26:19,312 [INFO] main_ingestion.py: Processing endpoint: PBI_Bancos ---
+2025-07-09 11:26:19,313 [INFO] api_cliente.py:  Endpoint:  PBI_Bancos 
+2025-07-09 11:26:19,909 [ERROR] api_cliente.py: Other error occurred: [Errno 2] No such file or directory: '../../config/last_load.json'
+2025-07-09 11:26:19,910 [WARNING] main_ingestion.py: No data found for PBI_Bancos
+2025-07-09 11:26:19,912 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:49:55,759 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:49:56,222 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:49:56,223 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 11:49:56,224 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 11:50:00,951 [INFO] api_cliente.py:  Successfully fetched data PBI_MovProveedor : 
+2025-07-09 11:50:01,027 [INFO] publisher.py: Successfully connected
+2025-07-09 11:50:01,034 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_MovProveedor.info'.
+2025-07-09 11:50:01,041 [INFO] publisher.py: Connection closed.
+2025-07-09 11:50:01,046 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:57:18,788 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:57:19,190 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:57:19,191 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 11:57:19,196 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 11:57:19,775 [ERROR] api_cliente.py: Other error occurred: 400 Client Error: Bad Request for url: https://api.businesscentral.dynamics.com/v2.0/5bbe2aad-dec7-464a-b62d-27924210f72e/Production/ODataV4/Company('FIRA')/PBI_MovProveedor?$filter=systemModifiedAt%20ge%202025-07-09T11:50:00.944389
+2025-07-09 11:57:19,776 [WARNING] main_ingestion.py: No data found for PBI_MovProveedor
+2025-07-09 11:57:19,778 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:57:36,248 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:57:40,133 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:57:40,135 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 11:57:40,140 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 11:57:40,853 [ERROR] api_cliente.py: Other error occurred: 'ApiClient' object has no attribute '_last_load'
+2025-07-09 11:57:40,854 [WARNING] main_ingestion.py: No data found for PBI_MovProveedor
+2025-07-09 11:57:40,855 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:58:52,993 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:58:53,332 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:58:53,333 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 11:58:53,338 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 11:58:53,914 [ERROR] api_cliente.py: Other error occurred: 'ApiClient' object has no attribute '_last_load'
+2025-07-09 11:58:53,915 [WARNING] main_ingestion.py: No data found for PBI_MovProveedor
+2025-07-09 11:58:53,917 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 11:59:44,083 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 11:59:44,466 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 11:59:44,467 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 11:59:44,477 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 11:59:45,243 [ERROR] api_cliente.py: Other error occurred: 'ApiClient' object has no attribute '_set_last_load_last_load'
+2025-07-09 11:59:45,245 [WARNING] main_ingestion.py: No data found for PBI_MovProveedor
+2025-07-09 11:59:45,247 [INFO] main_ingestion.py: Finished ingestion pipeline.
+2025-07-09 12:00:03,721 [INFO] main_ingestion.py: Starting ingestion pipeline...
+2025-07-09 12:00:04,249 [INFO] token_manager.py: Token saved : token/token.json
+2025-07-09 12:00:04,250 [INFO] main_ingestion.py: Processing endpoint: PBI_MovProveedor ---
+2025-07-09 12:00:04,254 [INFO] api_cliente.py:  Endpoint:  PBI_MovProveedor 
+2025-07-09 12:00:05,645 [INFO] api_cliente.py:  Successfully fetched data PBI_MovProveedor : 
+2025-07-09 12:00:05,656 [INFO] publisher.py: Successfully connected
+2025-07-09 12:00:05,658 [INFO] publisher.py: Info sent to 'API_exchange' with routing key 'PBI_MovProveedor.info'.
+2025-07-09 12:00:05,659 [INFO] publisher.py: Connection closed.
+2025-07-09 12:00:05,661 [INFO] main_ingestion.py: Finished ingestion pipeline.
